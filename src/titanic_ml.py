@@ -76,5 +76,8 @@ submission = pd.DataFrame({
     "Survived": predictions
 })
 
-submission.to_csv("submission.csv", index=False)
+submission.to_csv("../submission.csv", index=False)
 print("Arquivo submission.csv gerado com sucesso!")
+print(f"Acurácia de validação: {accuracy:.4f}")
+print("Arquivo submission.csv gerado com sucesso!")
+print("Local: pasta raiz do projeto")

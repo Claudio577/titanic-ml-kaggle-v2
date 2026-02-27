@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score
 # ===============================
 # 1. Carregar dados
 # ===============================
-train = pd.read_csv("train.csv")
-test = pd.read_csv("test.csv")
+train = pd.read_csv("../train.csv")
+test = pd.read_csv("../test.csv")
 
 # ===============================
 # 2. Limpeza básica

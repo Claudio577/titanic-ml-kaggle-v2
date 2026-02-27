@@ -8,8 +8,8 @@ print("Iniciando script Titanic ML...")
 # ===============================
 # 1. Carregar dados
 # ===============================
-train = pd.read_csv("../train.csv")
-test = pd.read_csv("../test.csv")
+train = pd.read_csv("train.csv")
+test = pd.read_csv("test.csv")
 
 print("Dados carregados com sucesso!")
 

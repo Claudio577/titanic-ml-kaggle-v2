@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -6,10 +7,21 @@ from sklearn.metrics import accuracy_score
 print("Iniciando script Titanic ML...")
 
 # ===============================
+# Caminhos absolutos (SOLUÇÃO FINAL)
+# ===============================
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TRAIN_PATH = os.path.join(BASE_DIR, "train.csv")
+TEST_PATH = os.path.join(BASE_DIR, "test.csv")
+
+print("Base dir:", BASE_DIR)
+print("Train path:", TRAIN_PATH)
+print("Test path:", TEST_PATH)
+
+# ===============================
 # 1. Carregar dados
 # ===============================
-train = pd.read_csv("train.csv")
-test = pd.read_csv("test.csv")
+train = pd.read_csv(TRAIN_PATH)
+test = pd.read_csv(TEST_PATH)
 
 print("Dados carregados com sucesso!")
 
@@ -80,7 +92,9 @@ submission = pd.DataFrame({
     "Survived": predictions
 })
 
-submission.to_csv("../submission.csv", index=False)
+SUBMISSION_PATH = os.path.join(BASE_DIR, "submission.csv")
+submission.to_csv(SUBMISSION_PATH, index=False)
 
 print("Arquivo submission.csv gerado com sucesso!")
+print("Local:", SUBMISSION_PATH)
 print("Script finalizado.")

@@ -3,11 +3,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
+print("Iniciando script Titanic ML...")
+
 # ===============================
 # 1. Carregar dados
 # ===============================
 train = pd.read_csv("../train.csv")
 test = pd.read_csv("../test.csv")
+
+print("Dados carregados com sucesso!")
 
 # ===============================
 # 2. Limpeza básica
@@ -77,7 +81,6 @@ submission = pd.DataFrame({
 })
 
 submission.to_csv("../submission.csv", index=False)
+
 print("Arquivo submission.csv gerado com sucesso!")
-print(f"Acurácia de validação: {accuracy:.4f}")
-print("Arquivo submission.csv gerado com sucesso!")
-print("Local: pasta raiz do projeto")
+print("Script finalizado.")
